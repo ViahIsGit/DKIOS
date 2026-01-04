@@ -1,0 +1,148 @@
+.App {
+  width: 100%;
+  height: 100vh;
+  background: var(--ios-bg-primary);
+  color: var(--ios-text-primary);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ================= Logout Button (Liquid Glass) ================= */
+
+.logout-button {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 2;
+
+  border: none;
+  border-radius: 999px;
+  padding: 8px 16px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.18),
+      rgba(255, 255, 255, 0.04)
+    ),
+    var(--ios-glass-elevated);
+
+  backdrop-filter: var(--ios-glass-blur);
+  -webkit-backdrop-filter: var(--ios-glass-blur);
+
+  border: 1px solid var(--ios-glass-border);
+  box-shadow: var(--ios-glass-shadow);
+
+  color: var(--ios-text-primary);
+  font-size: 0.85rem;
+  cursor: pointer;
+
+  transition:
+    transform 0.15s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.logout-button:hover {
+  transform: translateY(-1px);
+}
+
+.logout-button:active {
+  transform: scale(0.96);
+}
+
+/* ================= Main ================= */
+
+.app-main {
+  flex: 1;
+  display: flex;
+  position: relative;
+  min-height: 0;
+
+  /* espaço da Bottom Bar */
+  padding-bottom: 64px;
+
+  overflow: auto;
+  transition: margin-left 0.3s ease;
+}
+
+/* evita conteúdo sob Bottom Bar */
+.app-main > * {
+  padding-bottom: 64px;
+  box-sizing: border-box;
+}
+
+/* ================= Drawer ================= */
+
+.App.no-header .navigation-drawer {
+  top: 0;
+  height: 100vh;
+}
+
+.App.no-header .drawer-backdrop {
+  top: 0;
+}
+
+/* ================= Desktop ================= */
+
+@media (min-width: 960px) {
+  .app-main {
+    margin-left: 256px;
+  }
+
+  .feed-container {
+    min-width: 320px;
+    max-width: 600px;
+
+    border-right: 1px solid var(--ios-separator);
+
+    background:
+      linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.04),
+        transparent
+      ),
+      var(--ios-bg-secondary);
+  }
+
+  .email-detail {
+    display: flex;
+    flex: 1;
+    min-width: 0;
+  }
+
+  /* Drawer fixo no desktop */
+  .drawer-open .navigation-drawer {
+    transform: translateX(0) !important;
+  }
+}
+
+/* ================= Mobile ================= */
+
+@media (max-width: 959px) {
+  .app-main {
+    margin-bottom: 0;
+  }
+}
+
+/* ================= Scrollbar iOS ================= */
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.45);
+}
