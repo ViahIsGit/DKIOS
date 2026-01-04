@@ -1,0 +1,462 @@
+/* ===============================
+   PROFILE PAGE (Material You)
+   =============================== */
+
+.profile-page {
+  min-height: 100dvh;
+  background: var(--md-sys-color-background);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+  overflow-x: hidden;
+  color: var(--md-sys-color-on-background);
+}
+
+/* ===============================
+   LOADING
+   =============================== */
+
+.profile-loading {
+  display: grid;
+  place-items: center;
+  flex: 1;
+  min-height: 50vh;
+}
+
+/* ===============================
+   CONTAINER
+   =============================== */
+
+.profile-container {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+/* ===============================
+   COVER
+   =============================== */
+
+.profile-cover {
+  width: 100%;
+  height: 320px;
+  position: absolute;
+  inset: 0 auto auto 0;
+  z-index: 0;
+
+  background: var(--md-sys-color-surface-container-high);
+  overflow: hidden;
+
+  border-bottom-left-radius: 48px;
+  border-bottom-right-radius: 48px;
+}
+
+.profile-cover-gradient {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    var(--md-sys-color-primary-container),
+    var(--md-sys-color-tertiary-container)
+  );
+  opacity: 0.7;
+}
+
+/* ===============================
+   MENU BUTTON
+   =============================== */
+
+.profile-menu-button {
+  position: absolute;
+  top: max(16px, env(safe-area-inset-top));
+  right: 16px;
+  z-index: 10;
+
+  display: flex;
+  gap: 8px;
+  padding: 6px;
+
+  border-radius: 999px;
+  background: var(--md-sys-color-surface-container-high);
+  box-shadow: var(--md-sys-elevation-2);
+  backdrop-filter: blur(16px);
+}
+
+/* ===============================
+   CONTENT WRAPPER
+   =============================== */
+
+.profile-content-wrapper {
+  width: 100%;
+  max-width: 960px;
+  z-index: 1;
+
+  padding-top: 160px;
+  padding-bottom: 2rem;
+  padding-inline: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ===============================
+   HEADER
+   =============================== */
+
+.profile-header-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ===============================
+   AVATAR
+   =============================== */
+
+.profile-avatar-container {
+  position: relative;
+}
+
+.profile-avatar,
+.profile-avatar-placeholder {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+
+  border: 6px solid var(--md-sys-color-background);
+  background: var(--md-sys-color-surface-container-highest);
+
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.15),
+    inset 0 0 0 1px var(--md-sys-color-outline-variant);
+}
+
+.profile-avatar {
+  object-fit: cover;
+}
+
+.profile-avatar-placeholder {
+  display: grid;
+  place-items: center;
+}
+
+.profile-avatar-placeholder md-icon {
+  font-size: 72px;
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+/* ===============================
+   TITLE
+   =============================== */
+
+.profile-title-section {
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.profile-name {
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.profile-handle {
+  font-size: 1rem;
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+.profile-bio-text {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--md-sys-color-on-surface);
+  margin-top: 0.25rem;
+}
+
+/* ===============================
+   STATS (Material Card)
+   =============================== */
+
+.profile-stats {
+  display: flex;
+  gap: 2rem;
+  padding: 1rem 2rem;
+  margin-top: 1rem;
+
+  background: var(--md-sys-color-surface-container);
+  border-radius: 24px;
+  box-shadow: var(--md-sys-elevation-1);
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: opacity 160ms ease;
+}
+
+.stat-item:hover {
+  opacity: 0.75;
+}
+
+.stat-number {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+/* ===============================
+   TABS (Material You Pills)
+   =============================== */
+
+.profile-tabs-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.profile-tabs {
+  display: inline-flex;
+  gap: 4px;
+  padding: 4px;
+
+  background: var(--md-sys-color-surface-container-low);
+  border-radius: 999px;
+  box-shadow: var(--md-sys-elevation-1);
+}
+
+.profile-tab {
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: transparent;
+  border: none;
+
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--md-sys-color-on-surface-variant);
+
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  cursor: pointer;
+  transition:
+    background-color 180ms cubic-bezier(0.2, 0, 0, 1),
+    color 180ms cubic-bezier(0.2, 0, 0, 1),
+    transform 120ms ease;
+}
+
+.profile-tab:active {
+  transform: scale(0.96);
+}
+
+.profile-tab.active {
+  background: var(--md-sys-color-secondary-container);
+  color: var(--md-sys-color-on-secondary-container);
+}
+
+/* ===============================
+   POSTS GRID
+   =============================== */
+
+.posts-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.posts-grid > * {
+  border-radius: 24px;
+  overflow: hidden;
+  aspect-ratio: 9 / 16;
+  transition: transform 160ms ease;
+}
+
+.posts-grid > *:hover {
+  transform: scale(1.02);
+}
+
+/* ===============================
+   EMPTY / LOADING
+   =============================== */
+
+.empty-state {
+  width: 100%;
+  padding: 5rem 2rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+
+  background: var(--md-sys-color-surface-container-low);
+  border-radius: 32px;
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+.empty-state md-icon {
+  font-size: 64px;
+  opacity: 0.6;
+}
+
+/* ===============================
+   PROFILE VIDEO GRID (Material You)
+   =============================== */
+
+.posts-grid {
+  width: 100%;
+  display: grid;
+
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 12px;
+
+  padding-bottom: 2rem;
+}
+
+/* Card do vídeo */
+.posts-grid > * {
+  position: relative;
+
+  aspect-ratio: 9 / 16;
+  border-radius: 20px;
+  overflow: hidden;
+
+  background: var(--md-sys-color-surface-container-high);
+  box-shadow: var(--md-sys-elevation-1);
+
+  transition:
+    transform 180ms cubic-bezier(0.2, 0, 0, 1),
+    box-shadow 180ms cubic-bezier(0.2, 0, 0, 1);
+}
+
+/* Hover / Press */
+.posts-grid > *:hover {
+  transform: scale(1.03);
+  box-shadow: var(--md-sys-elevation-2);
+}
+
+.posts-grid > *:active {
+  transform: scale(0.98);
+}
+
+/* Thumbnail */
+.posts-grid img,
+.posts-grid video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Gradient inferior */
+.posts-grid > *::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 40%;
+
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.55),
+    rgba(0, 0, 0, 0)
+  );
+
+  pointer-events: none;
+}
+
+/* Contador de views */
+.profile-video-views {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  padding: 4px 8px;
+  border-radius: 999px;
+
+  background: color-mix(
+    in srgb,
+    var(--md-sys-color-surface-container-high) 70%,
+    transparent
+  );
+
+  backdrop-filter: blur(12px);
+  box-shadow: var(--md-sys-elevation-1);
+
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--md-sys-color-on-surface);
+}
+
+.profile-video-views md-icon {
+  font-size: 16px;
+}
+
+/* Ícone de play */
+.profile-video-play {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+
+  display: grid;
+  place-items: center;
+
+  background: color-mix(
+    in srgb,
+    var(--md-sys-color-surface-container-high) 70%,
+    transparent
+  );
+
+  backdrop-filter: blur(12px);
+  box-shadow: var(--md-sys-elevation-1);
+}
+
+.profile-video-play md-icon {
+  font-size: 18px;
+  color: var(--md-sys-color-on-surface);
+}
+
+/* ===============================
+   RESPONSIVO
+   =============================== */
+
+@media (min-width: 640px) {
+  .posts-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .posts-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
+  }
+}
+
+

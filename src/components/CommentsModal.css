@@ -1,0 +1,310 @@
+/* ===============================
+   COMMENTS MODAL (iOS Liquid Glass)
+================================ */
+
+.comments-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+
+  background: rgba(0, 0, 0, 0.55);
+
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+
+  animation: iosScrimFadeIn 240ms cubic-bezier(0.2, 0, 0, 1);
+}
+
+@keyframes iosScrimFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ===============================
+   BOTTOM SHEET (Liquid Glass)
+================================ */
+
+.comments-modal {
+  width: min(100%, 420px);
+  max-height: 85dvh;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.16),
+      rgba(255, 255, 255, 0.04)
+    ),
+    var(--ios-glass-bg);
+
+  color: var(--ios-text-primary);
+
+  border-radius: 32px 32px 24px 24px;
+  border: 1px solid var(--ios-glass-border);
+
+  box-shadow:
+    0 30px 60px rgba(0, 0, 0, 0.45);
+
+  backdrop-filter: var(--ios-glass-blur);
+  -webkit-backdrop-filter: var(--ios-glass-blur);
+
+  display: flex;
+  flex-direction: column;
+
+  position: fixed;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  animation: iosSheetUp 320ms cubic-bezier(0.2, 0, 0, 1);
+}
+
+@keyframes iosSheetUp {
+  from {
+    transform: translate(-50%, 48px);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+}
+
+/* ===============================
+   HEADER
+================================ */
+
+.comments-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 20px 24px 16px;
+
+  border-bottom: 1px solid var(--ios-separator);
+  flex-shrink: 0;
+}
+
+.comments-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+/* ===============================
+   LIST
+================================ */
+
+.comments-list {
+  flex: 1;
+  overflow-y: auto;
+
+  padding: 8px 24px 16px;
+  overscroll-behavior: contain;
+}
+
+/* iOS Scrollbar */
+.comments-list::-webkit-scrollbar {
+  width: 4px;
+}
+.comments-list::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 999px;
+}
+
+/* ===============================
+   EMPTY / LOADING
+================================ */
+
+.comments-loading,
+.comments-empty {
+  display: grid;
+  place-items: center;
+  gap: 12px;
+
+  padding: 48px 24px;
+  text-align: center;
+
+  color: var(--ios-text-tertiary);
+}
+
+.comments-empty md-icon {
+  font-size: 56px;
+  opacity: 0.5;
+}
+
+.comments-empty span {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: var(--ios-text-primary);
+}
+
+.comments-empty p {
+  margin: 0;
+  font-size: 0.875rem;
+}
+
+/* ===============================
+   COMMENT ITEM
+================================ */
+
+.comment-item {
+  display: flex;
+  gap: 12px;
+  padding: 14px 0;
+}
+
+.comment-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+
+  background: var(--ios-glass-elevated);
+  border: 1px solid var(--ios-glass-border);
+
+  flex-shrink: 0;
+}
+
+.comment-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.comment-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.comment-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.comment-username {
+  font-weight: 600;
+  font-size: 0.9375rem;
+}
+
+.comment-time {
+  font-size: 0.75rem;
+  color: var(--ios-text-tertiary);
+}
+
+.comment-text {
+  margin: 4px 0 8px;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+}
+
+/* ===============================
+   COMMENT ACTIONS
+================================ */
+
+.comment-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.comment-like-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+
+  padding: 6px 10px;
+  border-radius: 999px;
+
+  border: none;
+  background: transparent;
+  color: var(--ios-text-tertiary);
+
+  font-size: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+
+  transition:
+    background-color 160ms ease,
+    color 160ms ease,
+    transform 120ms ease;
+}
+
+.comment-like-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.comment-like-btn:active {
+  transform: scale(0.96);
+}
+
+.comment-like-btn.liked {
+  color: var(--ios-accent);
+}
+
+/* ===============================
+   INPUT
+================================ */
+
+.comments-form {
+  padding: 12px 16px 16px;
+  border-top: 1px solid var(--ios-separator);
+  flex-shrink: 0;
+}
+
+.comment-input-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 8px 16px;
+  border-radius: 999px;
+
+  background: var(--ios-glass-elevated);
+  border: 1px solid transparent;
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease;
+}
+
+.comment-input-container:focus-within {
+  border-color: var(--ios-accent);
+}
+
+.comment-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  outline: none;
+
+  font-size: 0.9375rem;
+  color: var(--ios-text-primary);
+}
+
+.comment-send-btn {
+  color: var(--ios-accent);
+}
+
+.comment-send-btn:disabled {
+  opacity: 0.4;
+  color: var(--ios-text-tertiary);
+}
+
+/* ===============================
+   MOBILE
+================================ */
+
+@media (max-width: 959px) {
+  .comments-modal {
+    border-radius: 28px 28px 20px 20px;
+    bottom: 8px;
+  }
+}

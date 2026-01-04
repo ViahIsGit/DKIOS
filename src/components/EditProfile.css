@@ -1,0 +1,365 @@
+/* ===============================
+   EDIT PROFILE — iOS Liquid Glass
+================================ */
+
+.edit-profile-page {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0,0,0,0.35),
+      rgba(0,0,0,0.55)
+    );
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  color: var(--ios-text-primary);
+}
+
+.edit-profile-container {
+  max-width: 960px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+}
+
+/* ===============================
+   TOP APP BAR (iOS Glass)
+================================ */
+
+.edit-profile-top-bar {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  height: 64px;
+
+  position: sticky;
+  top: 0;
+  z-index: 10;
+
+  background: var(--ios-glass-bg);
+  border-bottom: 1px solid var(--ios-glass-border);
+
+  backdrop-filter: blur(22px) saturate(180%);
+  -webkit-backdrop-filter: blur(22px) saturate(180%);
+
+  color: var(--ios-text-primary);
+}
+
+.edit-profile-top-bar h1 {
+  flex: 1;
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin: 0 0 0 1rem;
+}
+
+.top-bar-actions {
+  width: 44px;
+}
+
+/* ===============================
+   CONTENT
+================================ */
+
+.edit-profile-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.2rem;
+  flex: 1;
+}
+
+/* ===============================
+   AVATAR SECTION
+================================ */
+
+.avatar-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.avatar-wrapper {
+  position: relative;
+}
+
+.avatar-touch-target {
+  display: block;
+  position: relative;
+  cursor: pointer;
+}
+
+/* Avatar Image */
+.avatar-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+
+  background: var(--ios-glass-elevated);
+  border: 2px solid var(--ios-glass-border);
+
+  box-shadow:
+    0 12px 30px rgba(0,0,0,0.35);
+}
+
+/* Placeholder */
+.avatar-placeholder {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+
+  background: var(--ios-glass-elevated);
+  border: 2px solid var(--ios-glass-border);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--ios-text-secondary);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.avatar-placeholder md-icon {
+  font-size: 48px;
+}
+
+/* Camera Badge */
+.avatar-badge {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+
+  background: var(--ios-accent);
+  color: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 2px solid rgba(255,255,255,0.6);
+
+  box-shadow:
+    0 6px 16px rgba(0,0,0,0.4);
+}
+
+.avatar-badge md-icon {
+  font-size: 18px;
+}
+
+.avatar-helper-text {
+  font-size: 0.9rem;
+  color: var(--ios-text-secondary);
+  margin: 0;
+}
+
+/* ===============================
+   BANNER CUSTOMIZATION
+================================ */
+
+.banner-customization-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.banner-customization-section h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Banner options */
+.banner-options {
+  display: flex;
+  gap: 1rem;
+}
+
+.banner-option {
+  flex: 1;
+  padding: 1rem;
+  border-radius: 18px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+
+  background: var(--ios-glass-elevated);
+  border: 1px solid var(--ios-glass-border);
+
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  cursor: pointer;
+
+  transition:
+    transform 140ms ease,
+    box-shadow 160ms ease,
+    background-color 160ms ease;
+}
+
+.banner-option:hover {
+  box-shadow: 0 14px 34px rgba(0,0,0,0.35);
+}
+
+.banner-option:active {
+  transform: scale(0.95);
+}
+
+.banner-option.selected {
+  background: color-mix(in srgb, var(--ios-accent) 25%, transparent);
+  border-color: color-mix(in srgb, var(--ios-accent) 45%, transparent);
+}
+
+.banner-option md-icon {
+  font-size: 24px;
+  color: var(--ios-accent);
+}
+
+.banner-option span {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Color Picker */
+.color-picker-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.color-picker-container label {
+  font-size: 0.8rem;
+  color: var(--ios-text-secondary);
+}
+
+.color-input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  padding: 0.6rem;
+  border-radius: 14px;
+
+  background: var(--ios-glass-elevated);
+  border: 1px solid var(--ios-glass-border);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.color-input-wrapper input[type="color"] {
+  border: none;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  background: none;
+  padding: 0;
+}
+
+.color-value {
+  font-size: 0.9rem;
+}
+
+/* Banner Preview */
+.banner-preview {
+  height: 120px;
+  border-radius: 22px;
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow:
+    0 12px 30px rgba(0,0,0,0.35);
+}
+
+.banner-preview-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0,0,0,0.15),
+      rgba(0,0,0,0.45)
+    );
+}
+
+.banner-preview span {
+  position: relative;
+  z-index: 1;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* ===============================
+   FORM FIELDS
+================================ */
+
+.form-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.full-width-field {
+  width: 100%;
+}
+
+.form-error-banner {
+  background: rgba(255, 59, 48, 0.2);
+  color: #ff453a;
+
+  padding: 1rem;
+  border-radius: 14px;
+  text-align: center;
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* ===============================
+   FAB (iOS Floating Action)
+================================ */
+
+.form-fab-container {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 20;
+}
+
+.form-fab-container button {
+  background: var(--ios-accent);
+  color: #fff;
+
+  border-radius: 999px;
+  box-shadow:
+    0 16px 40px rgba(0,0,0,0.45);
+
+  transition: transform 120ms ease;
+}
+
+.form-fab-container button:active {
+  transform: scale(0.95);
+}
+
+@media (max-width: 600px) {
+  .form-fab-container {
+    bottom: 1.5rem;
+    right: 1.5rem;
+  }
+}

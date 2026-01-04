@@ -1,0 +1,140 @@
+.profile-video-viewer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background: var(--md-sys-color-background);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.viewer-back-button {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 10000;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  backdrop-filter: blur(10px);
+  transition: all 0.2s;
+}
+
+.viewer-back-button:hover {
+  background: rgba(0, 0, 0, 0.7);
+  transform: scale(1.1);
+}
+
+.viewer-back-button md-icon-button {
+  color: white;
+}
+
+.viewer-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.viewer-video-container {
+  width: 100%;
+  height: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.viewer-video-container .video-card {
+  height: 100vh;
+  min-height: 100vh;
+  width: 100%;
+  max-width: 500px;
+}
+
+.viewer-nav-indicator {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  backdrop-filter: blur(10px);
+  z-index: 10000;
+}
+
+.viewer-nav-button {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  backdrop-filter: blur(10px);
+  z-index: 10000;
+  color: white;
+}
+
+.viewer-nav-button:hover:not(:disabled) {
+  background: rgba(0, 0, 0, 0.7);
+  transform: translateX(-50%) scale(1.1);
+}
+
+.viewer-nav-button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.viewer-nav-button md-icon {
+  font-size: 32px;
+}
+
+.viewer-nav-up {
+  top: 20%;
+}
+
+.viewer-nav-down {
+  bottom: 20%;
+}
+
+@media (max-width: 768px) {
+  .viewer-back-button {
+    top: 0.5rem;
+    left: 0.5rem;
+  }
+
+  .viewer-nav-indicator {
+    top: 0.5rem;
+    right: 0.5rem;
+    padding: 0.375rem 0.75rem;
+    font-size: 0.75rem;
+  }
+
+  .viewer-nav-button {
+    width: 40px;
+    height: 40px;
+  }
+
+  .viewer-nav-button md-icon {
+    font-size: 24px;
+  }
+}
+

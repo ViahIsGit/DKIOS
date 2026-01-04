@@ -1,0 +1,321 @@
+/* ===============================
+   CREATE MODAL (iOS Liquid Glass)
+================================ */
+
+.create-modal {
+  width: 100%;
+  height: 100dvh;
+  border: none;
+  margin: 0;
+  padding: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0,0,0,0.35),
+      rgba(0,0,0,0.55)
+    );
+
+  color: var(--ios-text-primary);
+  overflow: hidden;
+}
+
+.create-modal::backdrop {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* ===============================
+   CONTENT
+================================ */
+
+.create-modal-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+}
+
+/* ===============================
+   CLOSE BUTTON (iOS Floating)
+================================ */
+
+.close-btn {
+  position: absolute;
+  top: max(16px, env(safe-area-inset-top));
+  left: 16px;
+  z-index: 100;
+
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+
+  display: grid;
+  place-items: center;
+
+  background: var(--ios-glass-elevated);
+  color: var(--ios-text-primary);
+
+  border: 1px solid var(--ios-glass-border);
+
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.35);
+
+  cursor: pointer;
+
+  transition:
+    transform 120ms ease,
+    background-color 160ms ease;
+}
+
+.close-btn:active {
+  transform: scale(0.9);
+}
+
+/* ===============================
+   STEP: SELECT
+================================ */
+
+.step-select {
+  flex: 1;
+  display: grid;
+  place-items: center;
+  gap: 32px;
+  padding: 24px;
+}
+
+.step-select h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--ios-text-primary);
+}
+
+/* Options */
+.select-options {
+  display: flex;
+  gap: 24px;
+}
+
+.select-option {
+  all: unset;
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+
+  color: var(--ios-text-primary);
+}
+
+/* Card (Glass) */
+.option-icon {
+  width: 88px;
+  height: 88px;
+  border-radius: 28px;
+
+  display: grid;
+  place-items: center;
+
+  background: var(--ios-glass-elevated);
+  border: 1px solid var(--ios-glass-border);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  box-shadow:
+    0 12px 28px rgba(0,0,0,0.35);
+
+  transition:
+    transform 140ms ease,
+    box-shadow 180ms ease;
+}
+
+.select-option:hover .option-icon {
+  box-shadow: 0 18px 40px rgba(0,0,0,0.45);
+}
+
+.select-option:active .option-icon {
+  transform: scale(0.92);
+}
+
+.option-icon md-icon {
+  font-size: 32px;
+  color: var(--ios-accent);
+}
+
+/* ===============================
+   STEP: CAMERA
+================================ */
+
+.step-camera {
+  width: 100%;
+  height: 100%;
+  background: black;
+}
+
+/* ===============================
+   STEP: EDITOR
+================================ */
+
+.step-editor {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Preview */
+.editor-preview {
+  flex: 1;
+
+  background: black;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+  position: relative;
+}
+
+.preview-media {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* ===============================
+   SLIDESHOW
+================================ */
+
+.slideshow-preview {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.slideshow-indicators {
+  position: absolute;
+  bottom: 20px;
+  inset-inline: 0;
+
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+
+.indicator {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+
+  background: rgba(255,255,255,0.35);
+  transition: transform 160ms ease, background-color 160ms ease;
+}
+
+.indicator.active {
+  background: var(--ios-accent);
+  transform: scale(1.4);
+}
+
+/* ===============================
+   CONTROLS (iOS Bottom Glass)
+================================ */
+
+.editor-controls {
+  padding: 16px;
+  padding-bottom: max(16px, env(safe-area-inset-bottom));
+
+  background: var(--ios-glass-bg);
+  border-top-left-radius: 28px;
+  border-top-right-radius: 28px;
+  border-top: 1px solid var(--ios-glass-border);
+
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  box-shadow:
+    0 -10px 30px rgba(0,0,0,0.35);
+}
+
+/* ===============================
+   INPUT
+================================ */
+
+.description-input {
+  width: 100%;
+  min-height: 96px;
+
+  background: var(--ios-glass-elevated);
+  color: var(--ios-text-primary);
+
+  border: 1px solid var(--ios-glass-border);
+  border-radius: 18px;
+
+  padding: 14px 16px;
+  resize: none;
+
+  font-size: 0.95rem;
+  line-height: 1.5;
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  transition:
+    border-color 160ms ease,
+    background-color 160ms ease;
+}
+
+.description-input:focus {
+  outline: none;
+  border-color: var(--ios-accent);
+}
+
+/* ===============================
+   POST BUTTON (iOS Accent)
+================================ */
+
+.post-btn {
+  width: 100%;
+  padding: 14px;
+
+  border-radius: 999px;
+  border: none;
+
+  background: var(--ios-accent);
+  color: white;
+
+  font-size: 1rem;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 10px 30px color-mix(in srgb, var(--ios-accent) 45%, transparent);
+
+  transition:
+    transform 120ms ease,
+    opacity 160ms ease;
+}
+
+.post-btn:active {
+  transform: scale(0.96);
+}
+
+.post-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
