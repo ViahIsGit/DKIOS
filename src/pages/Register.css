@@ -1,0 +1,168 @@
+.register-page {
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: color-mix(in srgb, var(--md-sys-color-surface-container-high) 90%, transparent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.register-shell {
+  width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+  background: transparent;
+  border-radius: 32px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow:
+    0 25px 80px rgba(0, 0, 0, 0.55),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+}
+
+.register-info {
+  background: color-mix(in srgb, var(--md-sys-color-surface-container-high) 90%, transparent);
+  border-radius: 28px;
+  padding: clamp(16px, 3vw, 32px);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.info-header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.info-header h1 {
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  color: var(--md-sys-color-primary);
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+}
+
+.info-card {
+  --md-elevated-card-container-color: color-mix(
+    in srgb,
+    var(--md-sys-color-surface-container) 90%,
+    rgba(255, 255, 255, 0.04)
+  );
+  border-radius: 20px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 0.95rem;
+}
+
+.info-card md-icon {
+  color: var(--md-sys-color-primary);
+}
+
+.info-footer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+.register-form-panel {
+  background: var(--md-sys-color-surface-container-high);
+  border-radius: 28px;
+  padding: clamp(16px, 3vw, 32px);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.register-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+.field-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.register-form md-filled-text-field {
+  --md-filled-field-container-shape: 20px;
+  --md-filled-field-container-color: color-mix(
+    in srgb,
+    var(--md-sys-color-surface-container) 85%,
+    rgba(255, 255, 255, 0.04)
+  );
+}
+
+.register-form md-filled-button {
+  width: 100%;
+  --md-filled-button-container-shape: 999px;
+}
+
+.register-form .ghost-link {
+  align-self: flex-start;
+}
+
+@media (max-width: 960px) {
+  .register-page {
+    padding: 0;
+  }
+
+  .register-shell {
+    border-radius: 0;
+    min-height: 100vh;
+    width: 100vw;
+    min-height: 100dvh;
+  }
+
+  .register-info {
+    display: none;
+  }
+
+  .register-form-panel {
+    border-radius: 0;
+    border: none;
+    background: transparent
+    ;
+  }
+}
+
+

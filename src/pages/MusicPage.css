@@ -1,0 +1,119 @@
+.music-page {
+    width: 100%;
+    min-height: 100vh;
+    background: var(--md-sys-color-background);
+    padding-bottom: 20px;
+}
+
+.music-header {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: var(--md-sys-color-surface);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.back-button {
+    background: none;
+    border: none;
+    color: var(--md-sys-color-on-surface);
+    cursor: pointer;
+    align-self: flex-start;
+    padding: 8px;
+    margin-left: -8px;
+}
+
+.music-info {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.music-cover {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(45deg, #333, #666);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.music-cover md-icon {
+    font-size: 40px;
+    color: white;
+}
+
+.music-details h1 {
+    font-size: 1.2rem;
+    margin: 0;
+    color: var(--md-sys-color-on-surface);
+}
+
+.music-details h2 {
+    font-size: 1rem;
+    margin: 4px 0;
+    color: var(--md-sys-color-on-surface-variant);
+    font-weight: normal;
+}
+
+.music-count {
+    font-size: 0.875rem;
+    color: var(--md-sys-color-on-surface-variant);
+}
+
+.preview-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid var(--md-sys-color-outline);
+    background: transparent;
+    color: var(--md-sys-color-on-surface);
+    font-family: 'Google Sans', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.music-videos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    padding-top: 1px;
+}
+
+.music-video-item {
+    aspect-ratio: 3/4;
+    position: relative;
+    background: #000;
+    cursor: pointer;
+}
+
+.music-video-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-views {
+    position: absolute;
+    bottom: 4px;
+    left: 4px;
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 0.75rem;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.video-views md-icon {
+    font-size: 16px;
+}
